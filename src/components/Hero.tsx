@@ -9,7 +9,7 @@ function Hero() {
         <div className="flex flex-col items-center justify-center text-center" style={{ backgroundColor: 'var(--background)' }}>
             <div className="h-screen flex flex-col items-center justify-center">
                 <motion.h1
-                    className="text-6xl mb-4 font-extrabold font-orbitron"
+                    className="text-6xl mb-4 font-extrabold font-[family-name:var(--font-orbitron)]"
                     initial={{opacity: 0, y: 500}}
                     animate={{opacity: 1, y: 0}}
                     transition={{duration: 1, ease: 'anticipate'}}

@@ -1,7 +1,7 @@
 // app/layout.tsx
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import type { Metadata } from "next";
+import { Geist, Geist_Mono, Orbitron } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -12,6 +12,11 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
     variable: "--font-geist-mono",
+    subsets: ["latin"],
+});
+
+const orbitron = Orbitron({
+    variable: "--font-orbitron", // Убедитесь, что здесь нет квадратных скобок
     subsets: ["latin"],
 });
 
@@ -28,7 +33,7 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} antialiased`}
         >
         <Header />
         {children}

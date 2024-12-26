@@ -45,7 +45,7 @@ const SkillsTable: React.FC = () => {
                 <tbody>
                 {data.map((item, index) => {
                     const ref = useRef(null);
-                    const isInView = useInView(ref, { triggerOnce: true });  // Отслеживаем только при первом входе в область видимости
+                    const isInView = useInView(ref);  // Отслеживаем только при первом входе в область видимости
 
                     return (
                         <tr
