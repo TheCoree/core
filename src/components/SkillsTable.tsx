@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { FaReact, FaNodeJs } from 'react-icons/fa';
-import { SiNextdotjs, SiTailwindcss, SiMongodb, SiMysql, SiPython, SiTypescript, SiJavascript, SiFastapi, SiUnity, SiLinux, SiExpress, SiGit, SiHtml5, SiCss3, SiDocker } from "react-icons/si";
+import { SiNginx, SiFlask, SiDjango, SiNextdotjs, SiTailwindcss, SiMongodb, SiMysql, SiPython, SiTypescript, SiJavascript, SiFastapi, SiUnity, SiLinux, SiExpress, SiGit, SiHtml5, SiCss3, SiDocker } from "react-icons/si";
 import { motion, useInView } from 'framer-motion';
 
 interface Technology {
@@ -10,23 +10,26 @@ interface Technology {
 
 const SkillsTable: React.FC = () => {
     const data: Technology[] = [
-        { technologies: 'Python', skills: 90 },
-        { technologies: 'JavaScript', skills: 85 },
-        { technologies: 'TypeScript', skills: 50 },
-        { technologies: 'MySQL', skills: 40 },
-        { technologies: 'FastAPI', skills: 50 },
-        { technologies: 'Next.js', skills: 30 },
-        { technologies: 'Git', skills: 35 },
-        { technologies: 'Node.js', skills: 85 },
-        { technologies: 'React', skills: 40 },
+        { technologies: 'Python', skills: 93 },
+        { technologies: 'JavaScript', skills: 89 },
+        { technologies: 'TypeScript', skills: 46 },
+        { technologies: 'MySQL', skills: 42 },
+        { technologies: 'FastAPI', skills: 51 },
+        { technologies: 'Next.js', skills: 32 },
+        { technologies: 'Git', skills: 37 },
+        { technologies: 'Node.js', skills: 90 },
+        { technologies: 'React', skills: 43 },
         { technologies: 'Tailwind CSS', skills: 75 },
-        { technologies: 'Unity', skills: 15 },
-        { technologies: 'Linux', skills: 90 },
-        { technologies: 'MongoDB', skills: 10 },
-        { technologies: 'Express', skills: 55 },
-        { technologies: 'HTML', skills: 95 },
-        { technologies: 'CSS', skills: 90 },
-        { technologies: 'Docker', skills: 5 },
+        { technologies: 'Unity', skills: 16 },
+        { technologies: 'Linux', skills: 92 },
+        { technologies: 'MongoDB', skills: 6 },
+        { technologies: 'Express', skills: 58 },
+        { technologies: 'HTML', skills: 97 },
+        { technologies: 'CSS', skills: 88 },
+        { technologies: 'Docker', skills: 3 },
+        { technologies: 'Django', skills: 17 },
+        { technologies: 'Flask', skills: 13 },
+        { technologies: 'Nginx', skills: 50 },
     ];
 
     return (
@@ -71,6 +74,9 @@ const SkillsTable: React.FC = () => {
                                 {item.technologies === 'HTML' && <SiHtml5 className="mr-2 size-6" />}
                                 {item.technologies === 'CSS' && <SiCss3 className="mr-2 size-6" />}
                                 {item.technologies === 'Docker' && <SiDocker className="mr-2 size-6" />}
+                                {item.technologies === 'Django' && <SiDjango className="mr-2 size-6" />}
+                                {item.technologies === 'Flask' && <SiFlask className="mr-2 size-6" />}
+                                {item.technologies === 'Nginx' && <SiNginx className="mr-2 size-6" />}
                                 {item.technologies}
                             </td>
                             <td className="px-6 py-4 sm:w-auto min-w-[100px]">
