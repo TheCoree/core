@@ -27,21 +27,23 @@ export default function Header() {
           toggled={isMenuOpen}
           toggle={toggleMenu}
           size={30}
-          duration={0.4} // Более медленная анимация
+          duration={0.4}
           easing="ease-in-out"
         />
       </div>
 
       {/* Mobile Menu */}
       <motion.div
-        initial={{ opacity: 0 }} // Начальная прозрачность 0
-        animate={{ opacity: isMenuOpen ? 1 : 0 }} // Плавное появление и исчезновение меню
-        exit={{ opacity: 0 }} // При закрытии меню оно исчезает
+        initial={{ opacity: 0 }} // Начальная прозрачность
+        animate={{ opacity: isMenuOpen ? 1 : 0 }} // Плавное появление/исчезновение
+        exit={{ opacity: 0 }} // Исчезновение
         transition={{
-          duration: 0.5, // Длительность анимации
-          ease: 'easeInOut', // Тип плавности анимации
-        }} // Плавный переход
-        className="font-orbitron absolute top-0 left-0 w-full h-screen bg-background flex flex-col items-center justify-center space-y-8 text-2xl z-40"
+          duration: 0.5,
+          ease: 'easeInOut',
+        }}
+        className={`font-orbitron fixed top-0 left-0 w-full h-screen bg-background flex flex-col items-center justify-center space-y-8 text-2xl z-40 ${
+          isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'
+        }`}
       >
         {['Home', 'Products', 'About', 'Links'].map((text, index) => {
           const href = text === 'Home' ? '/' : `/${text.toLowerCase()}`;
@@ -49,7 +51,7 @@ export default function Header() {
             <Link
               key={index}
               href={href}
-              onClick={closeMenu}
+              onClick={closeMenu} // Закрыть меню при клике на ссылку
               className="hover:text-gray-700 transition"
             >
               {text}
